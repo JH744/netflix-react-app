@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { usePopularMoviesQuery } from "../../../../hooks/usePoplarMovies";
 import Alert from "react-bootstrap/Alert";
 import "./Banner.style.css";
