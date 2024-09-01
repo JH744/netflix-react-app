@@ -3,15 +3,18 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="/">
+        <Link to="/">
           <img src="/netflix.png" alt="" width={100} />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -19,8 +22,20 @@ function NavBar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/movies">Movies</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              홈
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/movies");
+              }}
+            >
+              영화
+            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
