@@ -1,0 +1,32 @@
+.banner {
+  width: 100%;
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner:before {
+  content: "";
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  left: 0;
+  height: 75vh;
+  width: 100%;
+}
+
+.banner-text-area {
+  width: 36%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: end;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* .banner-text-area 클래스 아래에 있는 모든 자식 요소에 z-index 2부여 */
+/* title과 overview가 대상 */
+.banner-text-area > * {
+  z-index: 2;
+}
