@@ -5,6 +5,7 @@ import { ClipLoader } from "react-spinners";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import MovieCard from "../MovieCard/MovieCard";
+import "./PopularMoviesSlide.style.css";
 
 const PopularMoviesSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
