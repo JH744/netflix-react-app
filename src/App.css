@@ -2,5 +2,5 @@
   background-color: #212529;
   color: white;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
