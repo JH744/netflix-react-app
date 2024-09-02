@@ -1,14 +1,13 @@
 import React from "react";
-import { usePopularMoviesQuery } from "../../../../hooks/usePoplarMovies";
 import Alert from "react-bootstrap/Alert";
 import { ClipLoader } from "react-spinners";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import MovieCard from "../MovieCard/MovieCard";
-import "./PopularMoviesSlide.style.css";
-
-const PopularMoviesSlide = () => {
-  const { data, isLoading, isError, error } = usePopularMoviesQuery();
+import { useTopLatedMoviesQuery } from "../../../../hooks/useTopLatedMovies";
+import "./TopLatedMoviesSlide.style.css";
+const TopLatedMoviesSlide = () => {
+  const { data, isLoading, isError, error } = useTopLatedMoviesQuery();
 
   const responsive = {
     desktop: {
@@ -30,15 +29,15 @@ const PopularMoviesSlide = () => {
 
   if (isError) return <Alert variant="danger">{error.message};</Alert>;
   return (
-    <div className="slide-section">
-      <h3>Popular Movies</h3>
+    <div>
+      <h3>TopLated Movies</h3>
       <Carousel
         infinite={true}
         centerMode={false}
         slidesToSlide={2}
         autoPlay={true} //자동재생
-        itemClass="carousel-item-padding-20-px"
-        containerClass="carousel-container"
+        itemClass="carousel-item-padding-40-px"
+        containerClass="carousel-container2"
         responsive={responsive}
       >
         {data.results.map((movie, index) => {
@@ -49,4 +48,4 @@ const PopularMoviesSlide = () => {
   );
 };
 
-export default PopularMoviesSlide;
+export default TopLatedMoviesSlide;

@@ -8,7 +8,12 @@
 
 .banner:before {
   content: "";
-  background: linear-gradient(to top, black, transparent);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
   position: absolute;
   left: 0;
   height: 75vh;
@@ -29,4 +34,18 @@
 /* title과 overview가 대상 */
 .banner-text-area > * {
   z-index: 2;
+}
+
+/* 태블릿(1024px 이하)에서의 스타일 */
+@media (max-width: 1024px) {
+  .banner-text-area p {
+    display: none;
+  }
+}
+
+/* 모바일(464px 이하)에서의 스타일 */
+@media (max-width: 464px) {
+  .banner-text-area p {
+    display: none;
+  }
 }

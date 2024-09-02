@@ -1,7 +1,7 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import "./MovieCard.style.css";
-
+import allSVG from "../../../../assets/images/all.svg";
 const MovieCard = ({ movie }) => {
   return (
     <div
@@ -14,14 +14,20 @@ const MovieCard = ({ movie }) => {
         <h3>{movie.title}</h3>
         {movie.genre_ids.map((id, index) => {
           return (
-            <Badge bg="danger" key={index}>
+            <Badge bg="danger" key={index} style={{ marginLeft: "4px" }}>
               {id}
             </Badge>
           );
         })}
-        <div>{movie.vote_average}</div>
-        <div>{movie.popularity}</div>
-        <div>{movie.adult ? "over18" : "under18"}</div>
+        <div>⭐️ {movie.vote_average.toFixed(1)}</div>
+        <div>👥 {movie.popularity.toFixed(1)}</div>
+        <div>
+          {movie.adult ? (
+            "🔞"
+          ) : (
+            <img src={allSVG} alt="description" width={20} />
+          )}
+        </div>
       </div>
     </div>
   );
