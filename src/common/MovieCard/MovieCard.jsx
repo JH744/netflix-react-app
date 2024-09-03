@@ -1,8 +1,19 @@
 import React from "react";
 import Badge from "react-bootstrap/Badge";
 import "./MovieCard.style.css";
-import allSVG from "../../../../assets/images/all.svg";
+import allSVG from "../../assets/images/all.svg";
+import { useMoviesGenreQuery } from "../../hooks/useMoviesGenre";
 const MovieCard = ({ movie }) => {
+  const { data: genreData } = useMoviesGenreQuery();
+
+  const showGenre = (genreIdList) => {
+    if (!genreData) return [];
+    const genreNameList = genreIdList.map((id) => {
+      const genreObj = genreData.find((genre) => genre.id === id);
+      return genreObj.name;
+    });
+    return genreNameList;
+  };
   return (
     <div
       style={{
@@ -11,11 +22,11 @@ const MovieCard = ({ movie }) => {
       className="movie-card"
     >
       <div className="overlay">
-        <h3>{movie.title}</h3>
-        {movie.genre_ids.map((id, index) => {
+        <h4>{movie.title}</h4>
+        {showGenre(movie.genre_ids).map((genre, index) => {
           return (
             <Badge bg="danger" key={index} style={{ marginLeft: "4px" }}>
-              {id}
+              {genre}
             </Badge>
           );
         })}

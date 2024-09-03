@@ -1,0 +1,18 @@
+.custom-navbar {
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.5),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+  transition: background-color 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.scroll {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3)
+  );
+  transition: background-color 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}

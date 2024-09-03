@@ -5,12 +5,37 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./NavBar.style.css";
+import { FiSearch } from "react-icons/fi";
+import { useRef, useState, useEffect } from "react";
 
 function NavBar() {
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY >= 30) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      className={isScrolled ? "trans scroll" : "trans custom-navbar"}
+      fixed="top"
+      /* 커스텀 CSS 클래스 지정 */
+    >
       <Container fluid>
         <Link to="/">
           <img src="/netflix.png" alt="" width={100} />
@@ -23,6 +48,7 @@ function NavBar() {
             navbarScroll
           >
             <Nav.Link
+              className="text-white"
               onClick={() => {
                 navigate("/");
               }}
@@ -30,6 +56,7 @@ function NavBar() {
               홈
             </Nav.Link>
             <Nav.Link
+              className="text-white"
               onClick={() => {
                 navigate("/movies");
               }}
@@ -40,11 +67,16 @@ function NavBar() {
           <Form className="d-flex">
             <Form.Control
               type="search"
-              placeholder="Search"
+              size="sm"
+              placeholder="제목, 장르, 사람"
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-danger">Search</Button>
+            <FiSearch
+              size={29}
+              onClick={() => {}}
+              style={{ cursor: "pointer" }}
+            />
           </Form>
         </Navbar.Collapse>
       </Container>
