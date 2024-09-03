@@ -37,7 +37,7 @@ const PopularMoviesSlide = () => {
         centerMode={false}
         slidesToSlide={2}
         autoPlay={true} //자동재생
-        itemClass="carousel-item-padding-20-px"
+        itemClass="carousel-item-padding-0-px"
         containerClass="carousel-container"
         responsive={responsive}
       >
