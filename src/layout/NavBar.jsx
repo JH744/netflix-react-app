@@ -14,7 +14,8 @@ function NavBar() {
     <Navbar
       expand="lg"
       className="custom-navbar"
-      bg="#141414"
+      fixed="top"
+
       /* 커스텀 CSS 클래스 지정 */
     >
       <Container fluid>
