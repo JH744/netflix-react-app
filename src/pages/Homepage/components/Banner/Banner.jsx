@@ -15,9 +15,7 @@ const Banner = () => {
     <div
       className="banner"
       style={{
-        backgroundImage: `url(${
-          headUrl + data?.results[randNum].backdrop_path
-        })`,
+        backgroundImage: `url(${headUrl + data?.results[randNum].poster_path})`,
       }}
     >
       <div className="banner-text-area">

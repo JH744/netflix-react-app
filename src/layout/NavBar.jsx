@@ -5,12 +5,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./NavBar.style.css";
 
 function NavBar() {
   const navigate = useNavigate();
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar
+      expand="lg"
+      className="custom-navbar"
+      bg="#141414"
+      /* 커스텀 CSS 클래스 지정 */
+    >
       <Container fluid>
         <Link to="/">
           <img src="/netflix.png" alt="" width={100} />
@@ -23,6 +29,7 @@ function NavBar() {
             navbarScroll
           >
             <Nav.Link
+              className="text-white"
               onClick={() => {
                 navigate("/");
               }}
@@ -30,6 +37,7 @@ function NavBar() {
               홈
             </Nav.Link>
             <Nav.Link
+              className="text-white"
               onClick={() => {
                 navigate("/movies");
               }}
