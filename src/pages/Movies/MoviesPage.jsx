@@ -9,12 +9,15 @@ import Col from "react-bootstrap/Col";
 import "./MoviesPage.style.css";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
+import Filter from "./components/Filter";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(1);
+  const [genre, setGenre] = useState(null);
   const keyword = searchParams.get("q");
   console.log(keyword);
+
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
     page,
@@ -31,7 +34,7 @@ const MoviesPage = () => {
     <Container className="search-page-container">
       <Row>
         <Col lg={4} xs={12}>
-          필터
+          <Filter setGenre={setGenre} />
         </Col>
         <Col lg={8} xs={12}>
           <Row>
