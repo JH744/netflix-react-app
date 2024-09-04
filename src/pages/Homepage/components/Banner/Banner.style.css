@@ -38,6 +38,9 @@
 
 /* 태블릿(1024px 이하)에서의 스타일 */
 @media (max-width: 1024px) {
+  .banner-text-area {
+    min-width: 300px;
+  }
   .banner-text-area p {
     display: none;
   }
@@ -45,6 +48,9 @@
 
 /* 모바일(464px 이하)에서의 스타일 */
 @media (max-width: 464px) {
+  .banner-text-area {
+    min-width: 300px;
+  }
   .banner-text-area p {
     display: none;
   }

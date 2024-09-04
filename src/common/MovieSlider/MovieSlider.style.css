@@ -6,3 +6,8 @@
 .slide-section {
   margin-top: 20px;
 }
+
+.carousel-item-custom {
+  display: flex;
+  justify-content: center;
+}
