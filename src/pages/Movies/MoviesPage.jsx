@@ -10,6 +10,7 @@ import "./MoviesPage.style.css";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 import Filter from "./components/Filter";
+import NoResults from "./components/NoResults";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -30,6 +31,7 @@ const MoviesPage = () => {
 
   if (isLoading) return <LodingSpinner />;
   if (isError) return <Alert variant="danger">{error.message};</Alert>;
+  if (data?.results?.length == 0) return <NoResults />;
   return (
     <Container className="search-page-container">
       <Row>

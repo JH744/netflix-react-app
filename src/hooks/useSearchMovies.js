@@ -3,9 +3,15 @@ import api from "../utils/api";
 
 const fetchSearchMovie = ({ keyword, genre, page }) => {
   if (keyword) {
-    return api.get(
-      `/search/movie?query=${keyword}&page=${page}&language=ko-KR`
-    );
+    if (genre) {
+      return api.get(
+        `/search/movie?with_genres=${genre}&query=${keyword}&page=${page}&language=ko-KR`
+      );
+    } else {
+      return api.get(
+        `/search/movie?query=${keyword}&page=${page}&language=ko-KR`
+      );
+    }
   } else if (genre) {
     return api.get(
       `/discover/movie?with_genres=${genre}&page=${page}&language=ko-KR`
