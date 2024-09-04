@@ -1,3 +1,17 @@
 .slide-container {
-  padding-left: 20px;
+  padding: 20px;
+}
+
+/* 태블릿(1024px 이하)에서의 스타일 */
+@media (max-width: 1024px) {
+  .slide-container {
+    padding: 0px;
+  }
+}
+
+/* 모바일(464px 이하)에서의 스타일 */
+@media (max-width: 464px) {
+  .slide-container {
+    padding: 0px;
+  }
 }
