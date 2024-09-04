@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -7,15 +6,16 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./NavBar.style.css";
 import { FiSearch } from "react-icons/fi";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function NavBar() {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [keyword, setKeyword] = useState("");
 
+  // 스크롤 y가 일정 위치보다 내려갈 경우 나브바의 배경색상을 변경
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       if (window.scrollY >= 30) {
         setIsScrolled(true);
       } else {
@@ -28,6 +28,12 @@ function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const searchByKeyword = (event) => {
+    event.preventDefault();
+    navigate(`/movies?q=${keyword}`);
+    // setKeyword(""); // 검색창 비우기 자율적으로 설정
+  };
 
   return (
     <Navbar
@@ -64,17 +70,28 @@ function NavBar() {
               영화
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          <Form
+            className="d-flex"
+            onSubmit={(event) => {
+              searchByKeyword(event);
+            }}
+          >
             <Form.Control
               type="search"
               size="sm"
               placeholder="제목, 장르, 사람"
               className="me-2"
               aria-label="Search"
+              value={keyword}
+              onChange={(e) => {
+                setKeyword(e.target.value);
+              }}
             />
             <FiSearch
+              onClick={(event) => {
+                searchByKeyword(event);
+              }}
               size={29}
-              onClick={() => {}}
               style={{ cursor: "pointer" }}
             />
           </Form>
