@@ -1,25 +1,30 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../utils/api";
-const fetchSearchMovie = ({ keyword, page }) => {
-  return keyword // 삼항연산자 사용
-    ? api.get(`/search/movie?query=${keyword}&page=${page}`, {
-        params: {
-          include_adult: false,
-          language: "ko-KR",
-        },
-      }) //키워드가 있다면 서치쿼리 api요청
-    : api.get(`/movie/popular?page=${page}`, {
-        params: {
-          include_adult: false,
-          language: "ko-KR",
-        },
-      }); // 키워드가 없다면 인기영화목록 표시
+
+const fetchSearchMovie = ({ keyword, genre, page }) => {
+  if (keyword) {
+    if (genre) {
+      return api.get(
+        `/search/movie?with_genres=${genre}&query=${keyword}&page=${page}&language=ko-KR`
+      );
+    } else {
+      return api.get(
+        `/search/movie?query=${keyword}&page=${page}&language=ko-KR`
+      );
+    }
+  } else if (genre) {
+    return api.get(
+      `/discover/movie?with_genres=${genre}&page=${page}&language=ko-KR`
+    );
+  }
+
+  return api.get(`/movie/popular?page=${page}&language=ko-KR`);
 };
 
-export const useSearchMovieQuery = ({ keyword, page }) => {
+export const useSearchMovieQuery = ({ keyword, genre, page }) => {
   return useQuery({
-    queryKey: ["movie-search", keyword, page],
-    queryFn: () => fetchSearchMovie({ keyword, page }),
+    queryKey: ["movie-search", keyword, page, genre],
+    queryFn: () => fetchSearchMovie({ keyword, genre, page }),
     select: (result) => result.data,
   });
 };

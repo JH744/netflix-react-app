@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useSearchMovieQuery } from "../../hooks/useSearchMovies";
 import Alert from "react-bootstrap/Alert";
@@ -10,6 +10,7 @@ import "./MoviesPage.style.css";
 import MovieCard from "../../common/MovieCard/MovieCard";
 import ReactPaginate from "react-paginate";
 import Filter from "./components/Filter";
+import NoResults from "./components/NoResults";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,20 +22,21 @@ const MoviesPage = () => {
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
     page,
+    genre,
   });
   console.log("data", data);
-
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
   };
 
   if (isLoading) return <LodingSpinner />;
   if (isError) return <Alert variant="danger">{error.message};</Alert>;
+  if (data?.results?.length == 0) return <NoResults />;
   return (
     <Container className="search-page-container">
       <Row>
         <Col lg={4} xs={12}>
-          <Filter setGenre={setGenre} />
+          <Filter setGenre={setGenre} setPage={setPage} />
         </Col>
         <Col lg={8} xs={12}>
           <Row>
