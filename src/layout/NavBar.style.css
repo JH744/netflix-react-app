@@ -16,3 +16,7 @@
   );
   transition: background-color 2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
+.container-fluid {
+  padding: 0 40px 0 40px !important;
+}

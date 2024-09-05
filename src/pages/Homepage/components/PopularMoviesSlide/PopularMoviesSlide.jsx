@@ -4,6 +4,7 @@ import Alert from "react-bootstrap/Alert";
 import { ClipLoader } from "react-spinners";
 import "react-multi-carousel/lib/styles.css";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
+import responsive from "../../../../constants/responsive";
 
 const PopularMoviesSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -14,7 +15,13 @@ const PopularMoviesSlide = () => {
   if (isError) {
     return <Alert variant="danger">{error.message};</Alert>;
   }
-  return <MovieSlider data={data} title={"지금 가장 뜨거운 인기작"} />;
+  return (
+    <MovieSlider
+      data={data}
+      title={"지금 가장 뜨거운 인기작"}
+      responsive={responsive}
+    />
+  );
 };
 
 export default PopularMoviesSlide;

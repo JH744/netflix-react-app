@@ -1,0 +1,33 @@
+.detail-page-container {
+  height: auto;
+  padding: 100px 200px 100px 200px;
+}
+
+.detail-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.poster-section {
+  height: 750px;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.info-section {
+  border: 1px solid red;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-rate {
+  display: flex;
+  flex-direction: column;
+}

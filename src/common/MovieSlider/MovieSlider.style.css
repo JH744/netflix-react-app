@@ -1,10 +1,11 @@
+.slide-section {
+  overflow: hidden;
+  margin-top: 20px;
+}
+
 .carousel-container {
   overflow: hidden;
   height: 360px;
-}
-
-.slide-section {
-  margin-top: 20px;
 }
 
 .carousel-item-custom {
