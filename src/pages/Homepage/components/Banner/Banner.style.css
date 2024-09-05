@@ -21,7 +21,8 @@
 }
 
 .banner-text-area {
-  width: 30%;
+  width: 40%;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -50,8 +51,13 @@
 @media (max-width: 464px) {
   .banner-text-area {
     min-width: 300px;
-  }
-  .banner-text-area p {
-    display: none;
+    h1 {
+      width: 200px;
+      font-size: xx-large;
+      padding-bottom: 20px;
+    }
+    p {
+      display: none;
+    }
   }
 }

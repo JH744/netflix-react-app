@@ -4,6 +4,7 @@ import { ClipLoader } from "react-spinners";
 import "react-multi-carousel/lib/styles.css";
 import { useUpcomingMoviesQuery } from "../../../../hooks/useUpcomingMovies";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
+import responsive from "../../../../constants/responsive";
 
 const UpcomingMoviesSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
@@ -14,7 +15,13 @@ const UpcomingMoviesSlide = () => {
   if (isError) {
     return <Alert variant="danger">{error.message};</Alert>;
   }
-  return <MovieSlider data={data} title={"기대되는 최신 개봉작"} />;
+  return (
+    <MovieSlider
+      data={data}
+      title={"기대되는 최신 개봉작"}
+      responsive={responsive}
+    />
+  );
 };
 
 export default UpcomingMoviesSlide;

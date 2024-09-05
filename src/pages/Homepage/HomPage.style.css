@@ -1,7 +1,9 @@
 .slide-container {
-  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px 0 40px;
+  overflow: hidden;
 }
-
 /* 태블릿(1024px 이하)에서의 스타일 */
 @media (max-width: 1024px) {
   .slide-container {

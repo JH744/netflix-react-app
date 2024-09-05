@@ -4,6 +4,7 @@ import { ClipLoader } from "react-spinners";
 import "react-multi-carousel/lib/styles.css";
 import { useTopLatedMoviesQuery } from "../../../../hooks/useTopLatedMovies";
 import MovieSlider from "../../../../common/MovieSlider/MovieSlider";
+import responsive from "../../../../constants/responsive";
 const TopLatedMoviesSlide = () => {
   const { data, isLoading, isError, error } = useTopLatedMoviesQuery();
 
@@ -13,7 +14,13 @@ const TopLatedMoviesSlide = () => {
   if (isError) {
     return <Alert variant="danger">{error.message};</Alert>;
   }
-  return <MovieSlider data={data} title={"최고의 평점을 받은 명작들"} />;
+  return (
+    <MovieSlider
+      data={data}
+      title={"최고의 평점을 받은 명작들"}
+      responsive={responsive}
+    />
+  );
 };
 
 export default TopLatedMoviesSlide;

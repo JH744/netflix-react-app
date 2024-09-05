@@ -1,6 +1,6 @@
 .app-Layout {
   background-color: #000;
   color: white;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%; /*100vh 시 화면크기 깨짐*/
+  height: auto;
 }
