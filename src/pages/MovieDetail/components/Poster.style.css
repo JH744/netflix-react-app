@@ -20,3 +20,14 @@
 .poster-overlay:hover {
   opacity: 1;
 }
+
+@media (max-width: 1000px) {
+  .poster-overlay {
+    display: none;
+  }
+}
+@media (max-width: 464px) {
+  .poster-overlay {
+    display: none;
+  }
+}
