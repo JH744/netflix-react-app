@@ -18,9 +18,13 @@ const MovieSlider = ({ data, title, responsive }) => {
         containerClass="carousel-container"
         responsive={responsive}
       >
-        {data?.results.map((movie, index) => {
-          return <MovieCard movie={movie} key={index} />;
-        })}
+        {!data ? (
+          <h5>결과 없음</h5>
+        ) : (
+          data?.results?.map((movie, index) => (
+            <MovieCard movie={movie} key={index} />
+          ))
+        )}
       </Carousel>
     </div>
   );

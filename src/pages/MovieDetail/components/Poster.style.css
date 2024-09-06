@@ -1,0 +1,22 @@
+.poster-overlay {
+  width: 100%;
+  height: 97%;
+  background: rgba(43, 41, 41, 0.5);
+  opacity: 0;
+  transition: all 0.2s;
+  color: white;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  padding: 20px;
+  padding-top: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.poster-overlay:hover {
+  opacity: 1;
+}

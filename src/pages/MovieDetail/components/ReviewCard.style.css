@@ -1,0 +1,22 @@
+.review-card {
+  width: 80%;
+  margin: 10px auto;
+  overflow: auto;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(46, 46, 46);
+}
+
+.review-card {
+  font-size: 18px;
+}
+.review-created_at {
+  font-size: 12px;
+}
+
+.review-content {
+  font-size: 16px;
+  margin-top: 8px;
+}
