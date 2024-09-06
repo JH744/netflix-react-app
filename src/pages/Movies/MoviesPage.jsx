@@ -10,6 +10,7 @@ import Filter from "./components/Filter";
 import NoResults from "./components/NoResults";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import "./PaginationStyles.css";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
