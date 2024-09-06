@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMoviesDetailQuery } from "../../hooks/useMoviesDetail";
 import { useParams } from "react-router-dom";
 import "./movieDetailPage.style.css";
@@ -11,6 +11,7 @@ import Poster from "./components/Poster";
 import Alert from "react-bootstrap/Alert";
 import { ClipLoader } from "react-spinners";
 import { useMovieVideoQuery } from "../../hooks/useMoviesVideo";
+import Button from "react-bootstrap/Button";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -18,6 +19,8 @@ const MovieDetailPage = () => {
   const { data: reviewData } = useMovieReviews({ id });
   const { data: recomend } = useMovieRecommendations({ id });
   const { data: videoData } = useMovieVideoQuery({ id });
+  const [moveReviewTab, setReviewMoveTab] = useState(true);
+
   console.log("id", id);
   console.log("detail", data);
   console.log("reviewsData", reviewData);
@@ -34,16 +37,38 @@ const MovieDetailPage = () => {
         <Poster data={data} videoData={videoData} />
         <MovieInfo data={data} />
       </div>
-      {/* 영화리뷰 */}
-      <div className="details-review">
-        {reviewData?.map((review, index) => (
-          <ReviewCard review={review} key={index} />
-        ))}
+      <div className="review-btn-box">
+        <Button
+          variant={moveReviewTab ? "danger" : "secondary"}
+          size="lg"
+          onClick={() => {
+            setReviewMoveTab(true);
+          }}
+        >
+          리뷰탭
+        </Button>
+        <Button
+          variant={moveReviewTab ? "secondary" : "danger"}
+          size="lg"
+          onClick={() => {
+            setReviewMoveTab(false);
+          }}
+        >
+          추천영화
+        </Button>
       </div>
-      {/* 추천영화탭 */}
-      <div>
-        <RecommendMovies recomend={recomend} />
-      </div>
+
+      {moveReviewTab ? (
+        <div className="details-review">
+          {reviewData?.map((review, index) => (
+            <ReviewCard review={review} key={index} />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <RecommendMovies recomend={recomend} />
+        </div>
+      )}
     </div>
   );
 };

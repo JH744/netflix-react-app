@@ -60,3 +60,8 @@
   justify-content: center;
   font-size: 30px;
 }
+
+.review-btn-box {
+  display: flex;
+  gap: 10px;
+}
