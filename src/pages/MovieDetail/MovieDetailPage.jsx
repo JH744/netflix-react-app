@@ -60,6 +60,7 @@ const MovieDetailPage = () => {
 
       {moveReviewTab ? (
         <div className="details-review">
+          <h3>글로벌 리뷰</h3>
           {reviewData?.map((review, index) => (
             <ReviewCard review={review} key={index} />
           ))}

@@ -1,22 +1,40 @@
 .review-card {
-  width: 80%;
-  margin: 10px auto;
-  overflow: auto;
-  height: 300px;
-  padding: 10px;
+  max-width: 90%;
+  height: auto;
+  margin: 20px auto;
+  padding: 10px 20px 45px 20px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(46, 46, 46);
+  background-color: black;
+  border: 1px solid #dc3545;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
 }
-
+.tap-box {
+  overflow: hidden;
+}
 .review-card {
   font-size: 18px;
 }
 .review-created_at {
-  font-size: 12px;
+  font-size: 14px;
+  color: rgb(154, 153, 153);
 }
 
 .review-content {
   font-size: 16px;
   margin-top: 8px;
+}
+
+.review-author {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.openBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
 }
