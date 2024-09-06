@@ -1,0 +1,12 @@
+.trailer-movie {
+  height: 680px;
+  width: full;
+  position: relative;
+  background-color: rgb(179, 171, 171);
+}
+
+.closebtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

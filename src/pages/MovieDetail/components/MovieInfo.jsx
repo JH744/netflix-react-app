@@ -49,12 +49,6 @@ const MovieInfo = ({ data }) => {
         <Badge bg="danger">수익</Badge>
         <span> $ {data?.revenue.toLocaleString("en-US")}</span>
       </div>
-      <div className="details-trailer">
-        <Badge bg="danger" className="trailer-btn">
-          <span>트레일러 재생</span>
-          <FaPlay size={12} />
-        </Badge>
-      </div>
     </div>
   );
 };
