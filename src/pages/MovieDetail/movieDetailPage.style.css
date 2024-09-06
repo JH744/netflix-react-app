@@ -48,7 +48,12 @@
 }
 
 .details-review {
+  width: 100%;
   padding-top: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .overview-box {
@@ -125,4 +130,8 @@
   .info-section {
     width: 100%;
   }
+}
+
+.moreBtn {
+  margin: 0 auto;
 }

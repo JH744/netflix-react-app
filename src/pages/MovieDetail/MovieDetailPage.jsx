@@ -19,7 +19,9 @@ const MovieDetailPage = () => {
   const { data: reviewData } = useMovieReviews({ id });
   const { data: recomend } = useMovieRecommendations({ id });
   const { data: videoData } = useMovieVideoQuery({ id });
+
   const [moveReviewTab, setReviewMoveTab] = useState(true);
+  const [visibleReviews, setVisibleReviews] = useState(3); // 처음엔 3개의 리뷰만 표시
 
   console.log("id", id);
   console.log("detail", data);
@@ -29,6 +31,14 @@ const MovieDetailPage = () => {
 
   if (isLoading) <ClipLoader color="#E90813" size={65} speedMultiplier={1.2} />;
   if (isError) <Alert variant="danger">{error.message};</Alert>;
+
+  const handleShowMoreReviews = () => {
+    if (visibleReviews === 3) {
+      setVisibleReviews(reviewData.length); // 리뷰 모두 보기
+    } else {
+      setVisibleReviews(3); // 리뷰 다시 줄이기
+    }
+  };
 
   return (
     <div className="detail-page-container">
@@ -61,9 +71,21 @@ const MovieDetailPage = () => {
       {moveReviewTab ? (
         <div className="details-review">
           <h3>글로벌 리뷰</h3>
-          {reviewData?.map((review, index) => (
+          {reviewData?.slice(0, visibleReviews).map((review, index) => (
             <ReviewCard review={review} key={index} />
           ))}
+
+          {/* 더보기 / 줄이기 버튼 */}
+          {reviewData && reviewData.length > 3 && (
+            <Button
+              variant="danger"
+              size="lg"
+              onClick={handleShowMoreReviews}
+              className="moreBtn"
+            >
+              {visibleReviews === 3 ? "리뷰 더보기" : "리뷰 줄이기"}
+            </Button>
+          )}
         </div>
       ) : (
         <div>
