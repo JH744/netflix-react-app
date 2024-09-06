@@ -9,12 +9,8 @@ import responsive from "../../../../constants/responsive";
 const UpcomingMoviesSlide = () => {
   const { data, isLoading, isError, error } = useUpcomingMoviesQuery();
 
-  if (isLoading) {
-    return <ClipLoader color="#E90813" size={65} speedMultiplier={1.2} />;
-  }
-  if (isError) {
-    return <Alert variant="danger">{error.message};</Alert>;
-  }
+  if (isLoading) <ClipLoader color="#E90813" size={65} speedMultiplier={1.2} />;
+  if (isError) <Alert variant="danger">{error.message};</Alert>;
   return (
     <MovieSlider
       data={data}

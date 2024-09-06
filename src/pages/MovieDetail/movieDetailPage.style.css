@@ -20,14 +20,42 @@
 }
 
 .info-section {
-  border: 1px solid red;
+  padding: 5px;
   width: 50%;
   height: auto;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.details-title {
+  h2 {
+    margin: 0;
+    font-size: 48px;
+  }
+  span {
+    color: rgb(157, 155, 155);
+    font-size: 16px;
+  }
 }
 
 .details-rate {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+}
+
+.details-review {
+  padding: 10px;
+}
+
+.overview-box {
+  padding: 10px 0 0 0;
+  border-top: 1px solid rgb(139, 139, 139);
+  border-bottom: 1px solid rgb(139, 139, 139);
+}
+
+.trailer-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
 }

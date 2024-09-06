@@ -21,9 +21,7 @@ const RecommendMovies = ({ recomend }) => {
     },
   };
   return (
-    <div>
-      <MovieSlider data={recomend} title={"추천영화"} responsive={responsive} />
-    </div>
+    <MovieSlider data={recomend} title={"추천영화"} responsive={responsive} />
   );
 };
 
