@@ -1,10 +1,18 @@
-import React from "react";
 import Badge from "react-bootstrap/Badge";
 import { FaPlay } from "react-icons/fa";
+import TrailerModal from "./TrailerModal";
+import { useState } from "react";
 
-const MovieInfo = ({ data }) => {
+const MovieInfo = ({ data, videoData }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = { isModalOpen, setIsModalOpen };
+  console.log("영상있는가", videoData);
+
   return (
     <div className="info-section">
+      {isModalOpen && (
+        <TrailerModal openModal={openModal} videoData={videoData} />
+      )}
       <div className="details-genre">
         {data?.genres.map((genre, index) => {
           return (
@@ -19,6 +27,16 @@ const MovieInfo = ({ data }) => {
         <h2>{data?.title}</h2>
         <span className="details-tagline text-gray">{data?.tagline}</span>
       </div>
+      {videoData?.length !== 0 && (
+        <h4
+          onClick={() => {
+            setIsModalOpen(!isModalOpen);
+          }}
+          style={{ cursor: "pointer" }}
+        >
+          <Badge bg="danger">트레일러 ▶️</Badge>
+        </h4>
+      )}
       <div className="details-rate">
         <div>⭐️ {data?.vote_average.toFixed(1)}</div>
         <div>👥 {data?.popularity.toFixed(1)}</div>

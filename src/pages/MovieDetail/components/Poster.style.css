@@ -7,18 +7,24 @@
   color: white;
   font-weight: bold;
   overflow-wrap: break-word;
-  padding: 20px;
-  padding-top: 45px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
   cursor: pointer;
+  aspect-ratio: 9 / 16;
 }
 
 .poster-overlay:hover {
   opacity: 1;
+}
+@media (max-width: 1200px) {
+  .poster-overlay {
+    width: 90%;
+    height: 550px;
+  }
 }
 
 @media (max-width: 1000px) {
