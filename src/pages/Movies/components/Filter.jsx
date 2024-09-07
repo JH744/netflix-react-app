@@ -1,6 +1,7 @@
 import React from "react";
 import { useMoviesGenreQuery } from "../../../hooks/useMoviesGenre";
-import Badge from "react-bootstrap/Badge";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 const Filter = ({ setGenre, setPage }) => {
   const { data, isLoading, isError, error } = useMoviesGenreQuery();
@@ -11,27 +12,26 @@ const Filter = ({ setGenre, setPage }) => {
     setGenre(e.dataset.genreId);
     setPage(1);
   };
-
   return (
     <div>
-      {data?.map((genre, index) => (
-        <div
-          key={index}
-          data-genre-id={genre.id} // 장르 ID를 dataset으로 전달 가능
-          onClick={(event) => {
-            onClick(event.currentTarget);
-          }}
-          style={{
-            display: "inline-block",
-            marginLeft: "4px",
-            cursor: "pointer",
-          }} // 스타일 조정
-        >
-          <Badge bg="danger">{genre.name}</Badge>
-        </div>
-      ))}
+      <DropdownButton id="dropdown-item-button" title="장르별" variant="danger">
+        {data?.map((genre, index) => (
+          <Dropdown.Item
+            as="button"
+            key={index}
+            data-genre-id={genre.id} // 장르 ID를 dataset으로 전달 가능
+            onClick={(event) => {
+              onClick(event.currentTarget);
+            }}
+          >
+            {genre.name}
+          </Dropdown.Item>
+        ))}
+      </DropdownButton>
     </div>
   );
 };
-
+{
+  /* <Badge bg="danger">{genre.name}</Badge> */
+}
 export default Filter;

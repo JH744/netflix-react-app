@@ -54,24 +54,24 @@ const MoviesPage = () => {
   return (
     <div className="search-page-container">
       <div className="movie-contents">
-        <div className="popular-dropdown">
-          <h4>검색 정렬</h4>
-          <DropdownButton
-            id="dropdown-item-button"
-            title="인기도"
-            variant="danger"
-          >
-            <Dropdown.Item as="button" onClick={() => handleSort("UP")}>
-              높은순
-            </Dropdown.Item>
-            <Dropdown.Item as="button" onClick={() => handleSort("DOWN")}>
-              낮은순
-            </Dropdown.Item>
-          </DropdownButton>
-        </div>
-        <div className="genre-list">
-          <h4>카테고리</h4>
-          <Filter setGenre={setGenre} setPage={setPage} />
+        <div className="movie-sortTab">
+          <div className="genre-list">
+            <Filter setGenre={setGenre} setPage={setPage} />
+          </div>
+          <div className="popular-dropdown">
+            <DropdownButton
+              id="dropdown-item-button"
+              title="인기도"
+              variant="danger"
+            >
+              <Dropdown.Item as="button" onClick={() => handleSort("UP")}>
+                높은순
+              </Dropdown.Item>
+              <Dropdown.Item as="button" onClick={() => handleSort("DOWN")}>
+                낮은순
+              </Dropdown.Item>
+            </DropdownButton>
+          </div>
         </div>
         <div className="movie-card-list">
           {(sortedData || []).map((movie, index) => (
