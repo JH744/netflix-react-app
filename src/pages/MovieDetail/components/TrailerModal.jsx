@@ -7,8 +7,8 @@ const TrailerModal = ({ openModal, videoData }) => {
   const { isModalOpen, setIsModalOpen } = openModal;
 
   const opts = {
-    width: "1140",
-    height: "680",
+    width: "100%",
+    height: "100%",
     playerVars: {
       autoplay: 1,
     },
