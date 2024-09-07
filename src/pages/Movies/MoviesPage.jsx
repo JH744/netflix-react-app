@@ -21,6 +21,7 @@ const MoviesPage = () => {
   const keyword = searchParams.get("q");
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
+    genre,
     page,
   });
   console.log(keyword);
@@ -41,8 +42,8 @@ const MoviesPage = () => {
   };
 
   const handleGenreSort = () => {
-    if (genre) {
-      const filteredMovies = data?.results.filter((movie) => {
+    if (genre && keyword) {
+      const filteredMovies = sortedData?.filter((movie) => {
         return movie?.genre_ids.some((id) => {
           console.log("id : ", id, "genre:", genre);
           return id == genre;
@@ -54,14 +55,14 @@ const MoviesPage = () => {
   };
 
   useEffect(() => {
-    handleGenreSort();
-  }, [genre]);
-
-  useEffect(() => {
     if (data?.results) {
       setSortedData(data.results);
     }
   }, [data]);
+
+  useEffect(() => {
+    handleGenreSort();
+  }, [genre]);
 
   if (isLoading) return <LodingSpinner />;
   if (isError) return <Alert variant="danger">{error.message};</Alert>;
