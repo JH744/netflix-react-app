@@ -44,8 +44,8 @@ const MovieDetailPage = () => {
     <div className="detail-page-container">
       {/* 포스터와 영화정보 */}
       <div className="detail-container">
-        <Poster data={data} videoData={videoData} />
-        <MovieInfo data={data} />
+        <Poster data={data} />
+        <MovieInfo data={data} videoData={videoData} />
       </div>
       <div className="review-btn-box">
         <Button

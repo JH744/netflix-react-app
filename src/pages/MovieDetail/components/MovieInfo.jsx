@@ -1,10 +1,15 @@
-import React from "react";
 import Badge from "react-bootstrap/Badge";
 import { FaPlay } from "react-icons/fa";
+import TrailerModal from "./TrailerModal";
+import { useState } from "react";
 
-const MovieInfo = ({ data }) => {
+const MovieInfo = ({ data, videoData }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = { isModalOpen, setIsModalOpen };
   return (
     <div className="info-section">
+      {/* //  { isModalOpen && ( */}
+      {/* <TrailerModal openModal={openModal} videoData={videoData} /> */}
       <div className="details-genre">
         {data?.genres.map((genre, index) => {
           return (
