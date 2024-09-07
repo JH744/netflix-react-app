@@ -1,4 +1,5 @@
 .search-page-container {
+  min-height: 100vh;
   padding-top: 100px;
   display: flex;
 }
@@ -15,11 +16,16 @@
 }
 
 .movie-card-list {
+  min-height: 600px;
   width: 110%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+
+  h5 {
+    margin-top: 140px;
+  }
 }
 
 .movie-sortTab {

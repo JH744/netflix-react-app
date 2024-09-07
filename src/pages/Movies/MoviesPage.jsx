@@ -16,15 +16,15 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState(null);
+  console.log("genre", genre);
   const [sortedData, setSortedData] = useState(null);
   const keyword = searchParams.get("q");
-  console.log(keyword);
-
   const { data, isLoading, isError, error } = useSearchMovieQuery({
     keyword,
-    page,
     genre,
+    page,
   });
+  console.log(keyword);
   console.log("data", data);
 
   const handlePageClick = ({ selected }) => {
@@ -40,6 +40,23 @@ const MoviesPage = () => {
     }
     setSortedData(sorted);
   };
+
+  const handleGenreSort = () => {
+    if (genre && keyword) {
+      const filteredMovies = data?.results.filter((movie) => {
+        return movie?.genre_ids.some((id) => {
+          console.log("id : ", id, "genre:", genre);
+          return id == genre;
+        });
+      });
+      console.log("filteredMovies", filteredMovies);
+      setSortedData(filteredMovies);
+    }
+  };
+
+  useEffect(() => {
+    handleGenreSort();
+  }, [genre]);
 
   useEffect(() => {
     if (data?.results) {
@@ -73,32 +90,40 @@ const MoviesPage = () => {
             </DropdownButton>
           </div>
         </div>
-        <div className="movie-card-list">
-          {(sortedData || []).map((movie, index) => (
-            <MovieCard movie={movie} key={index} />
-          ))}
-        </div>
-        <ReactPaginate
-          previousLabel="<"
-          breakLabel="..."
-          nextLabel=">"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3} // 기본적으로 보여줄 페이지범위
-          marginPagesDisplayed={1} // 처음과 끝을 기준으로 보여줄 페이지 수
-          pageCount={data?.total_pages} // 전체 페이지 수
-          pageClassName="page-item"
-          previousClassName="page-item"
-          nextClassName="page-item"
-          breakClassName="page-item"
-          previousLinkClassName="page-link"
-          pageLinkClassName="page-link"
-          nextLinkClassName="page-link"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
-          activeClassName="active"
-          renderOnZeroPageCount={null}
-          forcePage={page - 1}
-        />
+        {sortedData?.length == 0 ? (
+          <div className="movie-card-list">
+            <h5>조회되는 결과가 없습니다.</h5>
+          </div>
+        ) : (
+          <>
+            <div className="movie-card-list">
+              {(sortedData || []).map((movie, index) => (
+                <MovieCard movie={movie} key={index} />
+              ))}
+            </div>
+            <ReactPaginate
+              previousLabel="<"
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={3} // 기본적으로 보여줄 페이지범위
+              marginPagesDisplayed={1} // 처음과 끝을 기준으로 보여줄 페이지 수
+              pageCount={data?.total_pages} // 전체 페이지 수
+              pageClassName="page-item"
+              previousClassName="page-item"
+              nextClassName="page-item"
+              breakClassName="page-item"
+              previousLinkClassName="page-link"
+              pageLinkClassName="page-link"
+              nextLinkClassName="page-link"
+              breakLinkClassName="page-link"
+              containerClassName="pagination"
+              activeClassName="active"
+              renderOnZeroPageCount={null}
+              forcePage={page - 1}
+            />
+          </>
+        )}
       </div>
     </div>
   );

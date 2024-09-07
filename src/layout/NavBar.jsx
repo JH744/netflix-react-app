@@ -32,7 +32,7 @@ function NavBar() {
   const searchByKeyword = (event) => {
     event.preventDefault();
     navigate(`/movies?q=${keyword}`);
-    // setKeyword(""); // 검색창 비우기 자율적으로 설정
+    setKeyword(""); // 검색창 비우기 자율적으로 설정
   };
 
   return (
