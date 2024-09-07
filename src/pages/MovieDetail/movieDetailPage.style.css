@@ -48,7 +48,12 @@
 }
 
 .details-review {
-  padding: 10px;
+  width: 100%;
+  padding-top: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .overview-box {
@@ -66,6 +71,8 @@
 .review-btn-box {
   display: flex;
   gap: 10px;
+  border-top: 1px solid rgb(139, 139, 139);
+  padding-top: 10px;
 }
 
 .overview-box {
@@ -123,4 +130,8 @@
   .info-section {
     width: 100%;
   }
+}
+
+.moreBtn {
+  margin: 0 auto;
 }

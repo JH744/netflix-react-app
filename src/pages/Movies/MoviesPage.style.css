@@ -1,5 +1,6 @@
 .search-page-container {
   padding-top: 100px;
+  display: flex;
 }
 
 .movie-contents {
@@ -12,13 +13,21 @@
   align-items: center;
   gap: 30px;
 }
-.genre-list {
-}
 
 .movie-card-list {
-  width: 80%;
+  width: 110%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.movie-sortTab {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+#dropdown-item-button {
+  width: 150px !important;
 }
