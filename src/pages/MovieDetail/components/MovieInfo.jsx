@@ -1,6 +1,6 @@
 import Badge from "react-bootstrap/Badge";
 import { FaPlay } from "react-icons/fa";
-import TrailerModal from "./TrailerModal";
+import TrailerModal from "./TrailerModal/TrailerModal";
 import { useState } from "react";
 
 const MovieInfo = ({ data, videoData }) => {
