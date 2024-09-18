@@ -16,7 +16,9 @@ const ReviewCard = ({ review }) => {
             {review.created_at.slice(0, 10)}
           </div>
         </div>
-        <div className="review-content">{review.content}</div>
+        <div className={`review-content ${openReviewTap ? "expanded" : ""}`}>
+          {review.content}
+        </div>
       </div>
       <Badge
         bg="danger"

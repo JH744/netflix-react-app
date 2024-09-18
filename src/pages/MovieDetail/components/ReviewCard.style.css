@@ -9,11 +9,9 @@
   background-color: black;
   border: 1px solid #dc3545;
   border-radius: 20px;
-  overflow: hidden;
   position: relative;
 }
 .tap-box {
-  overflow: hidden;
 }
 .review-card {
   font-size: 18px;
@@ -24,10 +22,21 @@
 }
 
 .review-content {
-  font-size: 16px;
-  margin-top: 8px;
+  display: -webkit-box; /* Flexbox의 조상격으로 여러 줄 텍스트를 자를 수 있도록 하는 레이아웃 */
+  -webkit-line-clamp: 2; /* 텍스트를 2줄로 제한 */
+  -webkit-box-orient: vertical; /* Flexbox 아이템들을 수직으로 정렬 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 텍스트가 넘칠 경우 말줄임표(...)로 표시 */
+  font-size: 16px; /* 글자 크기 16px */
+  line-height: 20px; /* 줄 간격을 20px로 설정 */
+  max-height: 40px; /* 최대 높이를 40px로 설정 (2줄을 위해) */
+  width: 1000px; /* 적절한 너비를 지정해 줍니다 */
 }
-
+.expanded {
+  /* .expanded 클래스가 추가된 경우 (보통 '더보기' 클릭 시) */
+  -webkit-line-clamp: unset; /* 텍스트 제한을 해제 */
+  max-height: none; /* 높이 제한을 제거 */
+}
 .review-author {
   display: flex;
   align-items: baseline;
