@@ -7,7 +7,7 @@ const OpenLogo = () => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
-    setOpened(sessionStorage.getItem("opened") == "true"); // session에서 오픈여부 기록을 가져옴
+    setOpened(sessionStorage.getItem("opened") === "true"); // session에서 오픈여부 기록을 가져옴
     if (opened !== true) {
       // opened 기록이 false라면 타이머와 함께 오프닝로고 보여주기
       const timer = setTimeout(() => {

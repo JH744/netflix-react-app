@@ -46,7 +46,7 @@ const MoviesPage = () => {
       const filteredMovies = sortedData?.filter((movie) => {
         return movie?.genre_ids.some((id) => {
           console.log("id : ", id, "genre:", genre);
-          return id == genre;
+          return id === genre;
         });
       });
       console.log("filteredMovies", filteredMovies);
@@ -71,6 +71,7 @@ const MoviesPage = () => {
   return (
     <div className="search-page-container">
       <div className="movie-contents">
+        {/* 필터 버튼 영역 */}
         <div className="movie-sortTab">
           <div className="genre-list">
             <Filter setGenre={setGenre} setPage={setPage} />
@@ -90,6 +91,7 @@ const MoviesPage = () => {
             </DropdownButton>
           </div>
         </div>
+        {/* 영화 리스트 영역 */}
         {sortedData?.length == 0 ? (
           <div className="movie-card-list">
             <h5>조회되는 결과가 없습니다.</h5>
