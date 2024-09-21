@@ -46,7 +46,7 @@ const MoviesPage = () => {
       const filteredMovies = sortedData?.filter((movie) => {
         return movie?.genre_ids.some((id) => {
           console.log("id : ", id, "genre:", genre);
-          return id == genre;
+          return id === genre;
         });
       });
       console.log("filteredMovies", filteredMovies);
