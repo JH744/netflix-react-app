@@ -1,3 +1,4 @@
+#netflix-clone-app
  빌드 : vite
  스택 : 리액트 + 리액트 쿼리 
  배포: vercel
