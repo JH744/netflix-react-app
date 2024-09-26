@@ -5,7 +5,6 @@
  :https://netflix-react-app-tau.vercel.app
  
 api : TMDB api 
-
 라이브러리 :
 react-spinner
 react-bootstrap
