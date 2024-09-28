@@ -10,12 +10,11 @@
   border: 1px solid #dc3545;
   border-radius: 20px;
   position: relative;
+  font-size: 18px;
 }
 .tap-box {
 }
-.review-card {
-  font-size: 18px;
-}
+
 .review-created_at {
   font-size: 14px;
   color: rgb(154, 153, 153);
@@ -30,7 +29,6 @@
   font-size: 16px; /* 글자 크기 16px */
   line-height: 20px; /* 줄 간격을 20px로 설정 */
   max-height: 40px; /* 최대 높이를 40px로 설정 (2줄을 위해) */
-  width: 1000px; /* 적절한 너비를 지정해 줍니다 */
 }
 .expanded {
   /* .expanded 클래스가 추가된 경우 (보통 '더보기' 클릭 시) */
