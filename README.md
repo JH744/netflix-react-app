@@ -8,7 +8,7 @@ A simplified Netflix clone site implemented using React.
 > 
 > period : 2024.09-2024.09
 
-## Domains 📝
+## Demo 📝
 > https://netflix-react-app-tau.vercel.app
 
 ## Environment ⚙ 
@@ -24,10 +24,10 @@ A simplified Netflix clone site implemented using React.
 ### Deploy
  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">
  
-### Api
+## Api 🖍
  - TMDB API
 
-### Library 
+## Library 💼
 - react-spinner
 - react-bootstrap
 - react-icons
