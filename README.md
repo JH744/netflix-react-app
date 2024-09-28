@@ -13,7 +13,7 @@
 ## 개발환경
 
  - build : vite <br>
- - stack : 리액트 , 리액트 쿼리 <br> 
+ - stack : ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) , ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white) <br> 
  - deploy: vercel
  - api : TMDB API
  - library : react-spinner , react-bootstrap
