@@ -1,23 +1,36 @@
 <div align="center">
-<h2>[클론프로젝트] 넷플릭스</h2>
- 리액트를 사용해 간략히 구현한 넷플릭스 클론사이트입니다.
+<h2>[CloneProject] Netflix 👨‍🏫</h2>
+A simplified Netflix clone site implemented using React.
 </div>
 
-## 개요
-- 프로젝트 이름: netflix(clone)
-- 프로젝트 지속기간: 2024.09-2024.09
+## Overview 🐈
+> Project Name : netflix(clone)
+> 
+> period : 2024.09-2024.09
 
-## 배포 주소
+## Domains 📝
 > https://netflix-react-app-tau.vercel.app
 
-## 개발환경
+## Environment ⚙ 
 
- - build : vite <br>
- - stack : ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
- - ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white)
- - ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
- - ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) <br> 
- - deploy: vercel
- - api : TMDB API
- - library : react-spinner , react-bootstrap
+### Build
+ ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+### Stack
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+   ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white) 
+   ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) 
+  <br> 
+
+### Deploy
+ <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">
+ 
+### Api
+ - TMDB API
+
+### Library 
+- react-spinner
+- react-bootstrap
+- react-icons
+- react-multi-carousel
+- react-youtube
 
