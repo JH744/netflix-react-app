@@ -28,9 +28,13 @@ A simplified Netflix clone site implemented using React.
  >  TMDB API
 
 ## Library 💼
-> react-spinner
-> react-bootstrap
-> react-icons
-> react-multi-carousel
-> react-youtube
+> - react-spinner
+> 
+> - react-bootstrap
+> 
+> - react-icons
+> 
+> - react-multi-carousel
+> 
+> - react-youtube
 
