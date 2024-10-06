@@ -25,7 +25,7 @@ A simplified Netflix clone site implemented using React.
 >  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white">
  > 
 ## Api 🖍
- >  TMDB API
+ >  TMDB API.
 
 ## Library 💼
 > - react-spinner
