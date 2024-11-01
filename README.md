@@ -1,6 +1,6 @@
 <div align="center">
 <h2>[CloneProject] Netflix 👨‍🏫</h2>
-A simplified Netflix clone site implemented using Reactㅣ
+A simplified Netflix clone site implemented using React
 </div>
 
 ## Overview 🐈
