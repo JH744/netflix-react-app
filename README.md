@@ -4,7 +4,7 @@ A simplified Netflix clone site implemented using React
 </div>
 
 ## Overview 🐈
-> Project Name : netflix(clone)
+> Project Name : 넷플릭스 클론 
 > 
 > period : 2024.09-2024.09
 
