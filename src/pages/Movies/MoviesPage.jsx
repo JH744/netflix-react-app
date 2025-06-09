@@ -65,7 +65,7 @@ const MoviesPage = () => {
   }, [genre]);
 
   if (isLoading) return <LodingSpinner />;
-  if (isError) return <Alert variant="danger">{error.message};</Alert>;
+  if (isError) return <Alert variant="danger">{error.message}</Alert>;
   if (data?.results?.length === 0) return <NoResults />;
 
   return (

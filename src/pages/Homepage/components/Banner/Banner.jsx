@@ -10,7 +10,7 @@ const Banner = () => {
   const randNum = (Math.random() * 20).toFixed(0);
   console.log(randNum);
   if (isLoading) return <LodingSpinner />;
-  if (isError) return <Alert variant="danger">{error.message};</Alert>;
+  if (isError) return <Alert variant="danger">{error.message}</Alert>;
   return (
     <div
       className="banner"
